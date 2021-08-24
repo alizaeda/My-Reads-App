@@ -13,8 +13,12 @@ const Book = props => {
               width: 128,
               height: 188,
               backgroundImage: `url(${
-                book.imageLinks && book.imageLinks.thumbnail
+                book.imageLinks
+                  ? book.imageLinks.thumbnail
+                  : 'https://www.svgrepo.com/show/225294/book-placeholder.svg'
               })`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
             }}
           ></div>
           <Charger

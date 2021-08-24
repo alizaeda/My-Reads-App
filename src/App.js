@@ -35,6 +35,9 @@ class App extends Component {
    * @param {*} shelf : SHelfName in Books Array
    */
   applyBookShelf = (book, shelf) => {
+    /**
+     * TODO: When the browser is refreshed, the same information is displayed on the page.
+     */
     BooksAPI.update(book, shelf);
     // const { books } = this.state;
     let updatedBooks = [];

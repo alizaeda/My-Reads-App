@@ -54,7 +54,7 @@ class SearchInput extends React.Component {
               <Book
                 key={book.id}
                 title={book.title}
-                thumbnail={book.thumbnail}
+                thumbnail={book.imageLinks.thumbnail}
                 shelfName="none"
                 authors={book.authors}
               />

@@ -13,21 +13,19 @@ class App extends Component {
     { key: 'read', name: 'Read' },
   ];
   state = {
-    Books: [],
     err: false,
-    books: getAll,
+    books: [],
   };
   componentDidMount() {
-    BooksAPI.getAll()
-      .then(book => {
-        this.setState({ Books: book });
-        // console.log('====================================');
-        // console.log(book);
-        // console.log('====================================');
-      })
-      .catch(err => this.setState({ err: true }));
+    BooksAPI.getAll().then(books => {
+      this.setState({ books: books });
+    });
+    // .catch(err => this.setState({ err: true }));
   }
   applyBookShelf = (book, shelf) => {
+    BooksAPI.update(book, shelf).then(book => {
+      this.setState({});
+    });
     const { books } = this.state;
     this.setState({
       books: books.map(b => {

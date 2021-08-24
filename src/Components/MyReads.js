@@ -7,7 +7,7 @@ class BooksRead extends Component {
     selectValue: '',
   };
   render() {
-    const { BookShelf, books } = this.props;
+    const { BookShelf, books, applyBookShelf } = this.props;
     return (
       <div>
         <div className="list-books-title">
@@ -33,6 +33,8 @@ class BooksRead extends Component {
                             title={book.title}
                             thumbnail={book.imageLinks.thumbnail}
                             shelfName={book.shelf}
+                            book={book}
+                            applyBookShelf={applyBookShelf}
                           />
                         );
                       })}

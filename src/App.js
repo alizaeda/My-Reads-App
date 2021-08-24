@@ -27,13 +27,18 @@ class App extends Component {
       })
       .catch(err => this.setState({ err: true }));
   }
-  moveBook = (book, shelf) => {
+  applyBookShelf = (book, shelf) => {
+    const { books } = this.state;
     this.setState({
-      books: {
-        shelf: shelf,
-      },
+      books: books.map(b => {
+        if (b.id === book.id) {
+          b.shelf = shelf;
+        }
+        return b;
+      }),
     });
   };
+
   render() {
     return (
       <div className="app">
@@ -42,7 +47,11 @@ class App extends Component {
           exact
           path="/"
           render={() => (
-            <MyReads BookShelf={this.BookShelf} books={this.state.books} />
+            <MyReads
+              BookShelf={this.BookShelf}
+              books={this.state.books}
+              applyBookShelf={this.applyBookShelf}
+            />
           )}
         />
       </div>

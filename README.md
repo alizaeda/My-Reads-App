@@ -8,7 +8,7 @@ This is First Project for Udacity Nanodegree program, This Application allows yo
 
 ## Project preview
 
-You Can Preview The Application at (MyReads | Book Tracking)[https://myreadsapp.alieslam.tech/]
+You Can Preview The Application at [MyReads | Book Tracking](https://myreadsapp.alieslam.tech/)
 
 ## Getting Started
 

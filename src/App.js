@@ -4,7 +4,7 @@ import SearchInput from './Components/SearchInput';
 import MyReads from './Components/MyReads';
 import { Route } from 'react-router-dom';
 import * as BooksAPI from './API/BooksAPI';
-import getAll from './Components/data';
+import { debounce } from 'throttle-debounce';
 
 class App extends Component {
   BookShelf = [
@@ -15,6 +15,7 @@ class App extends Component {
   state = {
     err: false,
     books: [],
+    searchBooks: [],
   };
   componentDidMount() {
     BooksAPI.getAll().then(books => {
@@ -24,7 +25,9 @@ class App extends Component {
   }
   applyBookShelf = (book, shelf) => {
     BooksAPI.update(book, shelf).then(book => {
-      this.setState({});
+      // console.log('====================================');
+      // console.log(book);
+      // console.log('====================================');
     });
     const { books } = this.state;
     this.setState({
@@ -36,11 +39,36 @@ class App extends Component {
       }),
     });
   };
+  searchBooks = debounce(300, false, searchVal => {
+    if (searchVal.length > 0) {
+      BooksAPI.search(searchVal).then(books => {
+        if (books.error) {
+          this.setState({ searchBooks: [] });
+        } else {
+          this.setState({ searchBooks: books });
+        }
+      });
+    } else {
+      this.setState({ searchBooks: [] });
+    }
+  });
+  resetSearch = () => {
+    this.setState({ searchBooks: [] });
+  };
 
   render() {
     return (
       <div className="app">
-        <Route path="/search" component={SearchInput} />
+        <Route
+          path="/search"
+          render={() => (
+            <SearchInput
+              onSearch={this.searchBooks}
+              onReset={this.resetSearch}
+              books={this.state.searchBooks}
+            />
+          )}
+        />
         <Route
           exact
           path="/"

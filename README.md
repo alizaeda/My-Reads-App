@@ -22,7 +22,6 @@ To get started developing right away:
 - start the development server with `npm start`
 
 <br/>
-<br/>
 
 ## Backend Server
 

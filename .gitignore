@@ -26,5 +26,3 @@ yarn-error.log*
 CONTRIBUTING.md
 .idea
 
-# Local Netlify folder
-.netlify

@@ -4,7 +4,6 @@ import SearchInput from './Components/SearchInput';
 import MyReads from './Components/MyReads';
 import { Route } from 'react-router-dom';
 import * as BooksAPI from './API/BooksAPI';
-import { debounce } from 'throttle-debounce';
 
 class App extends Component {
   BookShelf = [
@@ -39,7 +38,7 @@ class App extends Component {
       }),
     });
   };
-  searchBooks = debounce(300, false, searchVal => {
+  searchBooks = searchVal => {
     if (searchVal.length > 0) {
       BooksAPI.search(searchVal).then(books => {
         if (books.error) {
@@ -51,7 +50,7 @@ class App extends Component {
     } else {
       this.setState({ searchBooks: [] });
     }
-  });
+  };
   resetSearch = () => {
     this.setState({ searchBooks: [] });
   };

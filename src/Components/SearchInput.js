@@ -51,13 +51,7 @@ class SearchInput extends React.Component {
           </q>
           <ol className="books-grid">
             {books.map(book => (
-              <Book
-                key={book.id}
-                title={book.title}
-                thumbnail={book.imageLinks.thumbnail}
-                shelfName="none"
-                authors={book.authors}
-              />
+              <Book key={book.id} book={book} shelfName="none" />
             ))}
           </ol>
         </div>

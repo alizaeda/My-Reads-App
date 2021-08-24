@@ -2,7 +2,7 @@ import React from 'react';
 import Charger from './Charger';
 
 const Book = props => {
-  const { title, authors, thumbnail, shelfName, book, applyBookShelf } = props;
+  const { shelfName, book, applyBookShelf } = props;
   return (
     <li>
       <div className="book">
@@ -12,7 +12,9 @@ const Book = props => {
             style={{
               width: 128,
               height: 188,
-              backgroundImage: `url(${thumbnail})`,
+              backgroundImage: `url(${
+                book.imageLinks && book.imageLinks.thumbnail
+              })`,
             }}
           ></div>
           <Charger
@@ -21,8 +23,8 @@ const Book = props => {
             applyBookShelf={applyBookShelf}
           />
         </div>
-        <div className="book-title">{title}</div>
-        <div className="book-authors">{`${authors}, `}</div>
+        <div className="book-title">{book.title}</div>
+        <div className="book-authors">{`${book.authors}, `}</div>
       </div>
     </li>
   );

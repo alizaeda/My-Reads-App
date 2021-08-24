@@ -74,7 +74,7 @@ const getAll = [
     canonicalVolumeLink:
       'https://market.android.com/details?id=book-nggnmAEACAAJ',
     id: 'nggnmAEACAAJ',
-    shelf: 0,
+    shelf: 'currentlyReading',
   },
   {
     title: 'Learning Web Development with React and Bootstrap',
@@ -119,7 +119,7 @@ const getAll = [
     canonicalVolumeLink:
       'https://books.google.com/books/about/Learning_Web_Development_with_React_and.html?hl=&id=sJf1vQAACAAJ',
     id: 'sJf1vQAACAAJ',
-    shelf: 0,
+    shelf: 'currentlyReading',
   },
   {
     title: "The Cuckoo's Calling",
@@ -168,7 +168,7 @@ const getAll = [
     canonicalVolumeLink:
       'https://market.android.com/details?id=book-evuwdDLfAyYC',
     id: 'evuwdDLfAyYC',
-    shelf: 1,
+    shelf: 'wantToRead',
   },
   {
     title: 'Lords of Finance',
@@ -214,7 +214,7 @@ const getAll = [
     canonicalVolumeLink:
       'https://books.google.com/books/about/Lords_of_Finance.html?hl=&id=74XNzF_al3MC',
     id: '74XNzF_al3MC',
-    shelf: 1,
+    shelf: 'wantToRead',
   },
   {
     title: 'Needful Things',
@@ -259,7 +259,7 @@ const getAll = [
     canonicalVolumeLink:
       'https://books.google.com/books/about/Needful_Things.html?hl=&id=jAUODAAAQBAJ',
     id: 'jAUODAAAQBAJ',
-    shelf: 2,
+    shelf: 'read',
   },
   {
     title: 'React',
@@ -307,7 +307,7 @@ const getAll = [
     canonicalVolumeLink:
       'https://books.google.com/books/about/React.html?hl=&id=IOejDAAAQBAJ',
     id: 'IOejDAAAQBAJ',
-    shelf: 2,
+    shelf: 'read',
   },
   {
     title: 'Satire TV',
@@ -355,7 +355,7 @@ const getAll = [
     canonicalVolumeLink:
       'https://market.android.com/details?id=book-1wy49i-gQjIC',
     id: '1wy49i-gQjIC',
-    shelf: 2,
+    shelf: 'read',
   },
 ];
 

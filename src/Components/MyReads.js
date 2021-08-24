@@ -17,14 +17,14 @@ class BooksRead extends Component {
         </div>
 
         <div className="list-books-content">
-          {BookShelf.map((shelf, shelfKey) => {
+          {BookShelf.map(shelf => {
             return (
-              <div key={shelfKey} className="bookshelf">
-                <h2 className="bookshelf-title">{shelf}</h2>
+              <div key={shelf.key} className="bookshelf">
+                <h2 className="bookshelf-title">{shelf.name}</h2>
                 <div className="bookshelf-books">
                   <ol className="books-grid">
                     {books
-                      .filter(book => book.shelf === shelfKey)
+                      .filter(book => book.shelf === shelf.key)
                       .map(book => {
                         return (
                           <Book
@@ -32,7 +32,7 @@ class BooksRead extends Component {
                             authors={book.authors}
                             title={book.title}
                             thumbnail={book.imageLinks.thumbnail}
-                            shelfID={book.shelf}
+                            shelfName={book.shelf}
                           />
                         );
                       })}

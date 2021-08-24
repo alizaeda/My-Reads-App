@@ -2,7 +2,7 @@ import React from 'react';
 import Charger from './Charger';
 
 const Book = props => {
-  const { title, authors, thumbnail, shelfID } = props;
+  const { title, authors, thumbnail, shelfName } = props;
   return (
     <li>
       <div className="book">
@@ -15,10 +15,10 @@ const Book = props => {
               backgroundImage: `url(${thumbnail})`,
             }}
           ></div>
-          <Charger shelfID={shelfID} />
+          <Charger shelfName={shelfName} />
         </div>
         <div className="book-title">{title}</div>
-        <div className="book-authors">{authors}</div>
+        <div className="book-authors">{`${authors}, `}</div>
       </div>
     </li>
   );

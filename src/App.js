@@ -7,7 +7,11 @@ import * as BooksAPI from './API/BooksAPI';
 import getAll from './Components/data';
 
 class App extends Component {
-  BookShelf = ['Currently Reading', 'Want to read', 'Read'];
+  BookShelf = [
+    { key: 'currentlyReading', name: 'Currently Reading' },
+    { key: 'wantToRead', name: 'Want to read' },
+    { key: 'read', name: 'Read' },
+  ];
   state = {
     Books: [],
     err: false,
@@ -23,6 +27,13 @@ class App extends Component {
       })
       .catch(err => this.setState({ err: true }));
   }
+  moveBook = (book, shelf) => {
+    this.setState({
+      books: {
+        shelf: shelf,
+      },
+    });
+  };
   render() {
     return (
       <div className="app">

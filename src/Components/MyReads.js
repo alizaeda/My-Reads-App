@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import Book from './Book';
 import SearchBtn from './SearchBtn';
+import PropTypes from 'prop-types';
 
 class BooksRead extends Component {
   state = {
     selectValue: '',
+  };
+  static propTypes = {
+    BookShelf: PropTypes.array.isRequired,
+    books: PropTypes.array.isRequired,
+    applyBookShelf: PropTypes.func.isRequired,
   };
   render() {
     const { BookShelf, books, applyBookShelf } = this.props;

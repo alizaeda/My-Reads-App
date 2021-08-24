@@ -2,10 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import Book from './Book';
 import SearchResults from './SearchResults';
+import PropTypes from 'prop-types';
 
 class SearchInput extends React.Component {
   state = {
     searchVal: '',
+  };
+  static propTypes = {
+    books: PropTypes.array.isRequired,
+    onSearch: PropTypes.func.isRequired,
+    onReset: PropTypes.func.isRequired,
+    applyBookShelf: PropTypes.func.isRequired,
+    searchBooks: PropTypes.array.isRequired,
   };
   handleOnChange = e => {
     this.setState({ searchVal: e.target.value }, () => {

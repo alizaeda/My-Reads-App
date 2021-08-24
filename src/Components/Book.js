@@ -1,5 +1,6 @@
 import React from 'react';
 import Charger from './Charger';
+import PropTypes from 'prop-types';
 
 const Book = props => {
   const { shelfName, book, applyBookShelf } = props;
@@ -32,6 +33,12 @@ const Book = props => {
       </div>
     </li>
   );
+};
+
+Book.propTypes = {
+  shelfName: PropTypes.string.isRequired,
+  book: PropTypes.object.isRequired,
+  applyBookShelf: PropTypes.func.isRequired,
 };
 
 export default Book;

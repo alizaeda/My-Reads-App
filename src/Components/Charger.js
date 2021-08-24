@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Charger extends Component {
   state = {
     chargerValue: this.props.shelfName,
+  };
+  static propTypes = {
+    shelfName: PropTypes.string.isRequired,
+    book: PropTypes.object.isRequired,
+    applyBookShelf: PropTypes.func.isRequired,
   };
   handleOnChange = event => {
     const { value } = event.target;

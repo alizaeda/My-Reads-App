@@ -1,5 +1,6 @@
 import React from 'react';
 import Book from './Book';
+import PropTypes from 'prop-types';
 
 const SearchResults = props => {
   const { searchBooks, applyBookShelf, books } = props;
@@ -22,6 +23,12 @@ const SearchResults = props => {
         applyBookShelf={applyBookShelf}
       />
     ));
+};
+
+SearchResults.propTypes = {
+  searchBooks: PropTypes.array.isRequired,
+  applyBookShelf: PropTypes.func.isRequired,
+  books: PropTypes.array.isRequired,
 };
 
 export default SearchResults;

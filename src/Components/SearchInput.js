@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Book from './Book';
+// import Book from './Book';
+import SearchResults from './SearchResults';
 
 class SearchInput extends React.Component {
   state = {
@@ -12,7 +13,7 @@ class SearchInput extends React.Component {
     });
   };
   render() {
-    const { onReset, books } = this.props;
+    const { onReset, applyBookShelf, searchBooks, books } = this.props;
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -33,9 +34,11 @@ class SearchInput extends React.Component {
         </div>
         <div className="search-books-results">
           <ol className="books-grid">
-            {books.map(book => (
-              <Book key={book.id} book={book} shelfName="none" />
-            ))}
+            <SearchResults
+              searchBooks={searchBooks}
+              applyBookShelf={applyBookShelf}
+              books={books}
+            />
           </ol>
         </div>
       </div>

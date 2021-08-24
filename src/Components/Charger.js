@@ -5,10 +5,11 @@ class Charger extends Component {
     chargerValue: this.props.shelfName,
   };
   handleOnChange = event => {
+    const { value } = event.target;
     this.setState({
-      chargerValue: event.target.value,
+      chargerValue: value,
     });
-    this.props.applyBookShelf(this.props.book, event.target.value);
+    this.props.applyBookShelf(this.props.book, value);
   };
   render() {
     const { chargerValue } = this.state;

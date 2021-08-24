@@ -2,7 +2,7 @@
 
 # MyReads: A Book Tracking App
 
-This is First Project for Udacity Nanodegree program, This Application allows you to search for Books and place it in specific Shelf in Applicatio Main Page Application Included 3 Shelves (Currently Reading, Want to Read, Read) You can move it easier by BookCharger Select List , You Can Search for Specific Books in SearchPage Then you can get it in your main page shelves by BookCharger Select List (SearchInput is limited for a specific terms below)
+This is First Project for Udacity Nanodegree program, This Application allows you to search for Books and place it in specific Shelf in Application, Main Page Application Included 3 Shelves `Currently Reading, Want to Read, Read` You can move it easier by BookCharger Select List , You Can Search for Specific Books in SearchPage Then you can get it in your main page shelves by BookCharger Select List `SearchInput is limited for a specific terms below`
 
 <br/>
 

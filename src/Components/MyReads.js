@@ -37,7 +37,11 @@ class BooksRead extends Component {
                             key={book.id}
                             authors={book.authors}
                             title={book.title}
-                            thumbnail={book.imageLinks.thumbnail}
+                            thumbnail={
+                              books.thumbnail
+                                ? book.imageLinks.thumbnail
+                                : 'https://www.svgrepo.com/show/225294/book-placeholder.svg'
+                            }
                             shelfName={book.shelf}
                             book={book}
                             applyBookShelf={applyBookShelf}
